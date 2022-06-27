@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const horseSchema = new mongoose.Schema({
     name: {
         type: String,

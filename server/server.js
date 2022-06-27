@@ -1,7 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const database = require('./config/connection');
 const dotenv = require("dotenv");
+
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 dotenv.config()
 const connect = async () => {
     await mongoose.connect(process.env.MONGO_DB)
@@ -12,8 +16,12 @@ const connect = async () => {
 app.use(express.json())
 //app.use(express.static(public))
 app.use(express.urlencoded({ extended: true }))
+app.use(require("./routes"));
 
-app.listen(8000, function () {
-    connect() 
-    console.log("app is listening on 8000")
-})
+
+database.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+  });
+});
+

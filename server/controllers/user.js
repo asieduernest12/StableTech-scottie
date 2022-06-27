@@ -32,7 +32,7 @@ const userControllers = {
        }
      },
 
-    //get specific user by id - this could be used for getting a specific horse
+    //get specific user by id - this could be used for getting a specific horse as well
     async getUserById({ params }, res) {
       try {
         const userData = await User.findOne({ _id: params.id })
