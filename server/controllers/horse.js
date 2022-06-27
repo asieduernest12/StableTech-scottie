@@ -49,6 +49,18 @@ const horseControllers = {
       }
     },
 
+    //update a horse
+    async updateHorse({ params, body }, res) {
+      try {
+        const horseData = await User.findOneAndUpdate({ _id: params.id }, body, {
+          new: true,
+        });
+        res.json(horseData);
+      } catch (error) {
+        res.json(error);
+      }
+    },
+
     //delete a horse 
     async deleteHorse({ params }, res) {
       try {
