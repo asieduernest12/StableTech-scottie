@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
+const scheduleSchema = require('./schedule')
 
-const horseSchema = new mongoose.Schema({
+const horseSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -18,17 +19,23 @@ const horseSchema = new mongoose.Schema({
         require: true
     }, 
     vaccineDate: {
-        type: Date,
+        type: String,
         required: true
     },
     shoeDate: {
-        type: Date,
+        type: String,
         required: true
     },
     barnName: {
         type: String,
         required: true
-    }
-})
+    },
+   
+    
 
-module.exports = mongoose.model("Horses", horseSchema);
+},
+
+  );
+const Horses = model('Horse', horseSchema);
+
+module.exports = Horses
