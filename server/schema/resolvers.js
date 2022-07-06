@@ -36,16 +36,16 @@ const resolvers = {
       return Horse.findOne({ _id });
     },
 Schedule: async () => {
-    return Schedule.find()
+    return Schedule.find().sort({ createdAt: -1 });
       
     },
     OwnerSchedule: async (parent, { ownerName }) => {
   const params = ownerName ? { ownerName } : {};
-  return Schedule.find(params).sort({ _id: -1 });
+  return Schedule.find(params).sort({ createdAt: -1 });
 },
 HorseSchedule: async (parent, { horseName }) => {
   const params = horseName ? { horseName } : {};
-  return Schedule.find(params).sort({ _id: -1 });
+  return Schedule.find(params).sort({ createdAt: -1 });
 },
     
   },    

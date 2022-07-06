@@ -33,6 +33,7 @@ type Schedule{
     visitReason:String
     horseName:String
     ownerName: String
+    
 
 }
 

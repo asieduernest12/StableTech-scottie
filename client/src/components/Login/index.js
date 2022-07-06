@@ -1,6 +1,15 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
 
-const Footer = () => {
+
+
+
+import { QUERY_SCHEDULE } from '../../utils/queries';
+const Login = () => {
+  const {loading, data} = useQuery(QUERY_SCHEDULE)
+  const schedules = data?.Schedule|| [];
+  console.log(schedules)
+  
   return (
    <form id='form'>
         <h3>Sign In</h3>
@@ -44,4 +53,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+
+export default Login;
