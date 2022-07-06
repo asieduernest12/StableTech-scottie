@@ -1,7 +1,6 @@
 import React from 'react'
 import './horses.css'
 import Navbar from '../../components/Navbar'
-import background6 from "../../pages/images/horse1.webp";
 
 
 function Horses() {
@@ -21,7 +20,7 @@ function Horses() {
       <ul >
         
         <li className="position20" a href="url">Home</li>
-        <li className="position22" a href="url">logout</li>
+        <li className="position22" a href="url">Logout</li>
       </ul>
       </div>
      
