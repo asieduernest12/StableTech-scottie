@@ -28,6 +28,7 @@ function App() {
       <main>
         
      <Login></Login> 
+     <Home></Home>
      <Horses></Horses>
      <Schedule></Schedule>
 

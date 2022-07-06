@@ -1,6 +1,5 @@
 import React from 'react';
 import barnlogo from '../assets/images/barnlogo.png';
-import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from 'react-scroll';
 
 const Home = () => {
@@ -24,20 +23,9 @@ return (
     </li>
 </ul>
 
-<div onClick={handleClick} className="md:hidden">
-    {!nav ? <FaBars /> : <FaTimes />}
-</div>
-
-
-
-<ul
-    className={
-        !nav
-            ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[rgb(16,20,26)]"
-    }>
-    <li className="py-6 text-4xl">Home</li>
-    <li className="py-6 text-4xl">Sign In</li>
+<ul>
+    <li> Home</li>
+    <li > Sign In</li>
 </ul>
 </div>
 );
