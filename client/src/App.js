@@ -1,12 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/footer';
 
 function App() {
   return (
-     <div>
-      <Login />
+    <div className="App">
+      <Footer/>
     </div>
   );
 }
