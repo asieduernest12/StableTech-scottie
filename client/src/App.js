@@ -2,7 +2,7 @@ import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
+
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './components/Login/index';
 import Horses from './components/Horse/index';
@@ -27,10 +27,10 @@ function App() {
     <div>
       <main>
         
-     <Login></Login> 
+     {/* <Login></Login>  */}
      <Home></Home>
-     <Horses></Horses>
-     <Schedule></Schedule>
+     {/* <Horses></Horses> */}
+     {/* <Schedule></Schedule> */}
 
       </main>
     </div>

@@ -70,6 +70,26 @@ addSchedule: async (parent, args) => {
 
   return schedule;
 },
+updateSchedule: async (parent, args)=>{
+return Schedule.findByIdAndUpdate({_id: args._id},
+  {visitDay: args.visitDay, visitMonth: args.visitMonth, visitYear: args.vistYear, 
+    visitReason:args.visitReason, horseName: args.horseName, ownerName: args.ownerName },
+    {new:true})
+},
+
+updateHorse: async (parent, args)=>{
+  return Horse.findByIdAndUpdate({_id: args._id}, {name: args.name, ownerName: args.ownerName, ownerPhone: args.ownerPhone, feed: args.feed
+  ,vaccineDate: args.vaccineDate, shoeDate: args.shoeDate, barName:args.barnName})
+},
+
+deleteHorse: async (parent, args)=>{
+  return Horse.findByIdAndDelete({_id: args._id})
+},
+
+deleteSchedule: async (parent, args)=>{
+  return Schedule.findByIdAndDelete({_id: args._id})
+},
+
 login: async (parent, { email, password }) => {
   const user = await User.findOne({ email });
 

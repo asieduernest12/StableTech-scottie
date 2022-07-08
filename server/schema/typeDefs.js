@@ -25,7 +25,30 @@ type Horse {
     shoeDate: String
     barnName: String
 }
+
+type updateHorse {
+    _id: ID
+    name: String
+    ownerName: String
+    ownerPhone: String
+    feed: String
+    vaccineDate: String
+    shoeDate: String
+    barnName: String
+}
 type Schedule{
+    _id: ID
+    visitDay: String
+    visitMonth:String
+    visitYear:String
+    visitReason:String
+    horseName:String
+    ownerName: String
+    
+
+}
+
+type updateSchedule{
     _id: ID
     visitDay: String
     visitMonth:String
@@ -56,11 +79,15 @@ HorseSchedule(horseName: String): [Schedule]
 type Mutation {
      login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
-  addHorse(name: String!, ownerName: String!, ownerPhone: String!, feed: String,
-    vaccineDate: String!, shoeDate:String!, barnName:String!): Horse
+  addHorse(name: String!, ownerName: String!, ownerPhone: String!, feed: String!,
+     vaccineDate: String!, shoeDate:String!, barnName:String!): Horse
+  updateHorse(_id: ID!, name: String, ownerName: String, ownerPhone: String, feed: String
+    vaccineDate: String, shoeDate:String, barnName:String): Horse
+    deleteHorse(_id: ID!): Horse
     addSchedule(visitDay: String!, visitMonth: String!, visitYear: String!, visitReason: String! horseName: String!, ownerName: String!): Schedule
+    updateSchedule(_id: ID!, visitDay: String, visitMonth: String, visitYear: String, visitReason: String horseName: String, ownerName: String):Schedule
+    deleteSchedule(_id:ID!): Schedule
   }`
 ;
 
 
-module.exports = typeDefs;

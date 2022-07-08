@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const scheduleSchema = new Schema({
+
+
     
     visitDay: {
         type: String,

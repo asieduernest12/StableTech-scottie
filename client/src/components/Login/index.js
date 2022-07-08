@@ -12,7 +12,7 @@ const Login = () => {
   
   return (
    <form id='form'>
-        <h3>Sign In</h3>
+        <h3>Signup In</h3>
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -21,7 +21,7 @@ const Login = () => {
             placeholder="Enter email"
           />
         </div>
-        <div className="mb-3">
+         <div className="mb-3">
           <label>Password</label>
           <input
             type="password"
