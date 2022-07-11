@@ -72,14 +72,13 @@ addSchedule: async (parent, args) => {
 },
 updateSchedule: async (parent, args)=>{
 return Schedule.findByIdAndUpdate({_id: args._id},
-  {visitDay: args.visitDay, visitMonth: args.visitMonth, visitYear: args.vistYear, 
+  {visitDay: args.visitDay, visitMonth: args.visitMonth, visitYear: args.visitYear, 
     visitReason:args.visitReason, horseName: args.horseName, ownerName: args.ownerName },
     {new:true})
 },
 
 updateHorse: async (parent, args)=>{
-  return Horse.findByIdAndUpdate({_id: args._id}, {name: args.name, ownerName: args.ownerName, ownerPhone: args.ownerPhone, feed: args.feed
-  ,vaccineDate: args.vaccineDate, shoeDate: args.shoeDate, barName:args.barnName})
+  return Horse.findByIdAndUpdate({_id: args._id}, {name: args.name, ownerName: args.ownerName, ownerPhone: args.ownerPhone, feed: args.feed ,vaccineDate: args.vaccineDate, shoeDate: args.shoeDate, barName:args.barnName})
 },
 
 deleteHorse: async (parent, args)=>{
