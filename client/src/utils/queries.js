@@ -37,7 +37,23 @@ query Users($username: String!) {
 
 
 `
+export const QUERY_ALL_HORSES = gql `
 
+query allHorses {
+  allHorses{
+  horseName
+    _id
+    ownerName
+    ownerPhone
+    feed
+    vaccineDate
+    shoeDate
+    barnName
+  }
+}
+
+
+`;
 export const QUERY_HORSES_OWNERNAME = gql`
 
 query Horses($ownerName: String!) {

@@ -28,6 +28,9 @@ const resolvers = {
   const params = ownerName ? { ownerName } : {};
   return Horse.find(params).sort({ _id: -1 });
 },
+allHorses: async() => {
+  return Horse.find()
+},
  HorseDate: async (parent, { visitReason }) => {
   const params = visitReason ? { visitReason } : {};
   return Horse.find(params).sort({ _id: -1 });
@@ -78,7 +81,7 @@ return Schedule.findByIdAndUpdate({_id: args._id},
 },
 
 updateHorse: async (parent, args)=>{
-  return Horse.findByIdAndUpdate({_id: args._id}, {name: args.name, ownerName: args.ownerName, ownerPhone: args.ownerPhone, feed: args.feed ,vaccineDate: args.vaccineDate, shoeDate: args.shoeDate, barName:args.barnName})
+  return Horse.findByIdAndUpdate({_id: args._id}, {horseName: args.horseName, ownerName: args.ownerName, ownerPhone: args.ownerPhone, feed: args.feed ,vaccineDate: args.vaccineDate, shoeDate: args.shoeDate, barName:args.barnName})
 },
 
 deleteHorse: async (parent, args)=>{

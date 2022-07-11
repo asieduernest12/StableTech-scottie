@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const scheduleSchema = require('./schedule')
 
 const horseSchema = new Schema({
-    name: {
+    horseName: {
         type: String,
         required: true
     }, 

@@ -27,10 +27,9 @@ export const LOGIN_USER = gql`
 
 export const ADD_HORSE = gql`
 
-mutation AddHorse($name: String!, $ownerName: String!, $ownerPhone: String!, $vaccineDate: String!, $shoeDate: String!, $barnName: String!, $feed: String) {
-  addHorse(name: $name, ownerName: $ownerName, ownerPhone: $ownerPhone, vaccineDate: $vaccineDate, shoeDate: $shoeDate, barnName: $barnName, feed: $feed) {
- 
-    name
+mutation AddHorse($horseName: String!, $ownerName: String!, $ownerPhone: String!, $feed: String!, $vaccineDate: String!, $shoeDate: String!, $barnName: String!) {
+  addHorse(horseName: $horseName, ownerName: $ownerName, ownerPhone: $ownerPhone, feed: $feed, vaccineDate: $vaccineDate, shoeDate: $shoeDate, barnName: $barnName) {
+    horseName
     ownerName
     ownerPhone
     feed
@@ -41,23 +40,6 @@ mutation AddHorse($name: String!, $ownerName: String!, $ownerPhone: String!, $va
 }
 
 `;
-
-export const UPDATE_HORSE = gql`
-
-mutation UpdateHorse($id: ID!, $name: String, $ownerName: String, $ownerPhone: String, $feed: String, $vaccineDate: String, $shoeDate: String, $barnName: String) {
-  updateHorse(_id: $id, name: $name, ownerName: $ownerName, ownerPhone: $ownerPhone, feed: $feed, vaccineDate: $vaccineDate, shoeDate: $shoeDate, barnName: $barnName) {
-    _id
-    name
-    ownerName
-    ownerPhone
-    feed
-    vaccineDate
-    shoeDate
-    barnName
-  }
-}
-
-`
 
 export const ADD_SCHEDULE = gql`
 
@@ -73,19 +55,4 @@ mutation AddSchedule($visitDay: String!, $visitMonth: String!, $visitYear: Strin
   }
 }
 
-`
-
-export const UPDATE_SCHEDULE =gql`
-
-mutation UpdateSchedule($id: ID!, $visitDay: String, $visitMonth: String, $visitYear: String, $visitReason: String, $horseName: String, $ownerName: String) {
-  updateSchedule(_id: $id, visitDay: $visitDay, visitMonth: $visitMonth, visitYear: $visitYear, visitReason: $visitReason, horseName: $horseName, ownerName: $ownerName) {
-    _id
-    visitDay
-    visitMonth
-    visitYear
-    visitReason
-    horseName
-    ownerName
-  }
-}
 `

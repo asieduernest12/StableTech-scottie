@@ -17,7 +17,7 @@ type User {
 }
 type Horse {
     _id: ID
-    name: String
+    horseName: String
     ownerName: String
     ownerPhone: String
     feed: String
@@ -66,6 +66,7 @@ Users: [User]
 User(username: String!): User
 Horse(_id: ID!): Horse
 Horses(ownerName: String!): [Horse]
+allHorses: [Horse]
 HorseDate(visitReason: String): [Horse]
 Schedule: [Schedule]
 OwnerSchedule(ownerName: String): [Schedule]
@@ -79,9 +80,9 @@ HorseSchedule(horseName: String): [Schedule]
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
-  addHorse(name: String!, ownerName: String!, ownerPhone: String!, feed: String!,
+  addHorse(horseName: String!, ownerName: String!, ownerPhone: String!, feed: String!,
      vaccineDate: String!, shoeDate:String!, barnName:String!): Horse
-  updateHorse(_id: ID!, name: String, ownerName: String, ownerPhone: String, feed: String,
+  updateHorse(_id: ID!, horseName: String, ownerName: String, ownerPhone: String, feed: String,
     vaccineDate: String, shoeDate:String, barnName:String): Horse
   deleteHorse(_id: ID!): Horse
   addSchedule(visitDay: String!, visitMonth: String!, visitYear: String!, visitReason: String!, horseName: String!, ownerName: String!): Schedule
