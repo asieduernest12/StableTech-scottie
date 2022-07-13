@@ -1,13 +1,8 @@
 import React from "react";
 import barnlogo from "../../assets/images/barnlogo.png";
-import { Link } from "react-scroll";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  //const history = useHistory();
-  // const backHome = () => {
-  // history.push("/home");
-  // }
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#5b5b5b] opacity-75 text-gray-300">
       <div>
@@ -22,8 +17,8 @@ const Home = () => {
       <ul className="hidden md:flex flex space-x-4">
         <li className="hover:text-[#3faec1] hover:scale-105"></li>
         <li className="hover:text-[#3faec1] hover:scale-105">
-          <Link to="about" smooth={true} duration={500}>
-            Sign In
+          <Link to="/home" smooth={true} duration={500}>
+            Home
           </Link>
         </li>
       </ul>

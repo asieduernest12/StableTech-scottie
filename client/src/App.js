@@ -14,6 +14,7 @@ import Schedule from "./components/schedule/index";
 import Home from "./components/Navbar/index";
 import Homepage from "./components/Homepage/index";
 import Addhorse from "./components/addHorse/index";
+import Addvet from "./components/addVet/index";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -34,6 +35,7 @@ function App() {
           <Route path="/horses" element={<Horses />} />
           <Route path="/addhorse" element={<Addhorse />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/addvetappointment" element={<Addvet />} />
         </Routes>
       </Router>
     </ApolloProvider>

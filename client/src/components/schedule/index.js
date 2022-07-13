@@ -1,16 +1,18 @@
-import React from "react";
-import { Link } from "react-scroll";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import clockImage from "../../assets/images/clock.png";
+import { useQuery } from "@apollo/client";
+//import { QUERY_ALL_HORSES } from "../../utils/queries";
 
-const Schedule = (
-  visitDay,
-  visitMonth,
-  visitYear,
-  visitReason,
-  horseName,
-  ownerName,
-  createdAt
-) => {
+const Schedule = () => {
+  const [schedule, setSchedule] = useState([]);
+
+  const { loading, data } = useQuery(QUERY_ALL_HORSES);
+
+  useEffect(() => {
+    setHorses(data?.allHorses ?? horses);
+    console.log(horses);
+  }, [data]);
   return (
     <div
       class="w-screen h-screen flex justify-center items-center
