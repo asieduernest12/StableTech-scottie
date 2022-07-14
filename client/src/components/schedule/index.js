@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clockImage from "../../assets/images/clock.png";
 import { useQuery } from "@apollo/client";
-//import { QUERY_ALL_HORSES } from "../../utils/queries";
+import { QUERY_SCHEDULE } from "../../utils/queries";
 
 const Schedule = () => {
   const [schedule, setSchedule] = useState([]);
 
-  const { loading, data } = useQuery(QUERY_ALL_HORSES);
+  const { loading, data } = useQuery(QUERY_SCHEDULE);
 
   useEffect(() => {
-    setHorses(data?.allHorses ?? horses);
-    console.log(horses);
+    setSchedule(data?.Schedule ?? schedule);
+    console.log(schedule);
   }, [data]);
   return (
     <div
@@ -25,7 +25,7 @@ const Schedule = () => {
           </h1>
         </div>
         <div class="flex flex-row justify-center gap-4">
-          <Link to="projects" smooth={true} duration={700}>
+          <Link to="/addvetappointment" smooth={true} duration={700}>
             <button className="text-white group border-2 px-6 py-2 flex items-center hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300">
               Vet Appointment
               <span className="group-hover: duration-300"></span>
