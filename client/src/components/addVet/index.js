@@ -34,7 +34,7 @@ const Addvet = () => {
      }
     })
     .catch((error) =>
-    alert("Bummer: something unholy occured, pray and try again")
+    alert("Bummer: something happened, try again")
     );
   };
 
