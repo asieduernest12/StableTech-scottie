@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
+require("dotenv").config()
 
-//where did i get this local host info last time??
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/StableTech', {
+
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-module.exports = mongoose.connection;
+.then(()=>console.log("MongoDB connection established..."))
+.catch((error)=>console.error("MongoDB connection failed:", error.message))
+
 
