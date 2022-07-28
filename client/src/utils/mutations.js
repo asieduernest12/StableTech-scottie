@@ -71,13 +71,13 @@ export const ADD_SCHEDULE = gql`
       horseName: $horseName
       ownerName: $ownerName
     ) {
-      visitDay
-      visitMonth
-      visitYear
-      visitReason
+      _id
       horseName
       ownerName
-      createdAt
+      visitYear
+      visitDay
+      visitMonth
+      visitReason
     }
   }
 `;
