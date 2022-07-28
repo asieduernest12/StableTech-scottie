@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./server/utils/auth');
@@ -33,6 +34,10 @@ db.once('open', () => {
     })
   })
 };
+
+//This will create a middleware.
+//When you navigate to the root page, it would use the built react-app
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
