@@ -25,7 +25,7 @@
 			"type": "npm",
 			"script": "start",
 			"problemMatcher": [],
-			"label": "npm: start",
+			"label": "npm: start server",
 			"detail": "node server.js",
 			"group": {
 				"kind": "build",
