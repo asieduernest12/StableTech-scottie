@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login/index";
 import Horses from "./components/Horse/index";
 import Schedule from "./components/schedule/index";
@@ -36,6 +36,7 @@ function App() {
           <Route path="/addhorse" element={<Addhorse />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/addvetappointment" element={<Addvet />} />
+          <Route path="*" element={<Navigate to='/home'/>}/>
         </Routes>
       </Router>
     </ApolloProvider>
