@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login/index";
 import Horses from "./components/Horse/index";
 import Schedule from "./components/schedule/index";
