@@ -81,3 +81,15 @@ export const ADD_SCHEDULE = gql`
     }
   }
 `;
+
+export const DELETE_SCHEDULE = gql `
+mutation DeleteSchedule(
+  $id: ID!
+  ) {
+  deleteSchedule(
+    _id: $id
+    ) {
+    _id
+  }
+  }
+  `;

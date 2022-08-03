@@ -15,6 +15,7 @@ import Home from "./components/Navbar/index";
 import Homepage from "./components/Homepage/index";
 import Addhorse from "./components/addHorse/index";
 import Addvet from "./components/addVet/index";
+import Deleteschedule from "./components/deleteSchedule/index";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -36,6 +37,7 @@ function App() {
           <Route path="/addhorse" element={<Addhorse />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/addvetappointment" element={<Addvet />} />
+          <Route path="/deleteschedule" element={<Deleteschedule />} />
           <Route path="*" element={<Navigate to='/home'/>}/>
         </Routes>
       </Router>

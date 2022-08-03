@@ -48,7 +48,7 @@ const Horses = () => {
                   Edit
                 </a>
                 <a
-                  href="#"
+                  href="/deletehorse"
                   className="bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500"
                 >
                   Delete

@@ -23,7 +23,7 @@
 		},
 		{
 			"type": "npm",
-			"script": "node server.js",
+			"script": "start",
 			"problemMatcher": [],
 			"label": "npm: start server",
 			"detail": "node server.js",
