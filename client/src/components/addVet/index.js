@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_SCHEDULE } from "../../utils/mutations";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ADD_SCHEDULE } from "../../utils/mutations";
 
 const Addvet = () => {
  let horseName, ownerName, visitDay, visitMonth, visitYear, visitReason;
@@ -42,7 +42,7 @@ const Addvet = () => {
     <>
       <form onSubmit={handleFormSubmit}></form>
       <div
-        class="w-screen h-screen flex justify-center items-center
+        className="w-screen h-screen flex justify-center items-center
     bg-gradient-to-br from-blue-700 to-white-700"
       >
         <form

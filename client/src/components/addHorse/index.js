@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_HORSE } from "../../utils/mutations";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ADD_HORSE } from "../../utils/mutations";
 import { QUERY_ALL_HORSES } from "../../utils/queries";
 
 const Addhorse = () => {

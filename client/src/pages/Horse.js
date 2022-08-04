@@ -1,6 +1,5 @@
 import React from "react";
 import "./horses.css";
-import Navbar from "../../components/Navbar";
 
 function Horses() {
   return (

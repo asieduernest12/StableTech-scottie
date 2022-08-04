@@ -13,7 +13,7 @@ const Navbar = () => {
         <img src={barnlogo} alt="logo" style={{ width: "75px" }} />
       </div>
 
-      <ul className="hidden md:flex">
+      <ul className="md:flex">
 
         <li className="hover:text-[#3faec1] hover:scale-105">
           <Link to="horse" smooth={true} duration={500}>
@@ -37,10 +37,10 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={
+        className={`app-nav ${
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[rgb(16,20,26)]"
+            : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[rgb(16,20,26)]"}`
         }
       >
         <li className="py-6 text-4xl">Home</li>

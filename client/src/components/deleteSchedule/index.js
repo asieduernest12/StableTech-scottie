@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { DELETE_SCHEDULE } from "../../utils/mutations";
 import { useNavigate } from "react-router-dom";
+import { DELETE_SCHEDULE } from "../../utils/mutations";
 
 const Deleteschedule = () => {
  let _id;

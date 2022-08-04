@@ -14,10 +14,12 @@ const Home = () => {
         />
       </div>
 
-      <ul className="hidden md:flex flex space-x-4">
-        <li className="hover:text-[#3faec1] hover:scale-105"></li>
+      <ul className="md:flex flex space-x-4 text-white">
         <li className="hover:text-[#3faec1] hover:scale-105">
-          <Link to="/home" smooth={true} duration={500}>
+          <Link to='/horses' className="text-white">Horses</Link>
+        </li>
+        <li className="hover:text-[#3faec1] hover:scale-105">
+          <Link to="/home" smooth={true} duration={500} className="text-white">
             Home
           </Link>
         </li>
