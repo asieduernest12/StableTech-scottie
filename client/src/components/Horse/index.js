@@ -35,7 +35,7 @@ const Horses = () => {
 					<h1 className='text-4xl sm:text-7xl font-bold text-white'>Horses</h1>
 				</div>
 				<div className='flex flex-row justify-center gap-4'>
-					<Link to='/addhorse' smooth={true} duration={700}>
+					<Link to='/addhorse' smooth={'true'} duration={700}>
 						<button className='text-white rounded-lg group border-2 px-6 py-4 flex items-center flex-1 hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300'>
 							New horse
 							<span className='group-hover: duration-300'></span>
@@ -45,27 +45,25 @@ const Horses = () => {
 
 				<div className='flex flex-wrap justify-center horses-list'>
 					{horses.map((horse) => (
-						<>
-							<div className='flex flex-col bg-slate-300 rounded-lg shadow-md w-full m-6 overflow-hidden sm:w-52'>
-								<img src={horseImage} alt='horse-img'></img>
+						<div key={horse._id} className='flex flex-col bg-slate-300 rounded-lg shadow-md w-full m-6 overflow-hidden sm:w-52'>
+							<img src={horseImage} alt='horse-img'></img>
 
-								<h2 className='text-center px-2 pd-5'>Name : {horse.horseName}</h2>
+							<h2 className='text-center px-2 pd-5'>Name : {horse.horseName}</h2>
 
-								<h5 className='p-3 text-center'>Info:</h5>
-								<a
-									href='#'
-									className='bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500'
-								>
-									Edit
-								</a>
-								<button
-									onClick={() => Deletehorse(horse._id)}
-									className='bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500'
-								>
-									Delete
-								</button>
-							</div>
-						</>
+							<h5 className='p-3 text-center'>Info:</h5>
+							<a
+								href='#'
+								className='bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500'
+							>
+								Edit
+							</a>
+							<button
+								onClick={() => Deletehorse(horse._id)}
+								className='bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500'
+							>
+								Delete
+							</button>
+						</div>
 					))}
 				</div>
 			</div>

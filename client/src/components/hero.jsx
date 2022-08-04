@@ -23,7 +23,7 @@ const Hero = () => {
               of the office, and spend more time in the saddle!{" "}
             </p>
             <div>
-              <Link to="projects" smooth={true} duration={700}>
+              <Link to="projects" smooth={'true'} duration={700}>
                 <button className="text-white group border-2 px-6 py-2 flex items-center hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300">
                   Get organized!
                   <span className="group-hover: duration-300">

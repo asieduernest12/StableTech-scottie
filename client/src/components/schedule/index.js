@@ -23,19 +23,19 @@ const Schedule = () => {
 					<h1 className='text-4xl sm:text-7xl font-bold text-white'>Barn Schedule</h1>
 				</div>
 				<div className='flex flex-row justify-center gap-4'>
-					<Link to='/addvetappointment' smooth={true} duration={700}>
+					<Link to='/addvetappointment' smooth={'true'} duration={700}>
 						<button className='text-white group border-2 px-6 py-2 flex items-center hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300'>
 							Vet Appointment
 							<span className='group-hover: duration-300'></span>
 						</button>
 					</Link>
-					<Link to='projects' smooth={true} duration={700}>
+					<Link to='projects' smooth={'true'} duration={700}>
 						<button className='text-white group border-2 px-6 py-2 flex items-center hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300'>
 							Farrier Appointment
 							<span className='group-hover: duration-300'></span>
 						</button>
 					</Link>
-					<Link to='projects' smooth={true} duration={700}>
+					<Link to='projects' smooth={'true'} duration={700}>
 						<button className='text-white group border-2 px-6 py-2 flex items-center hover:bg-[#5b5b5b] hover:border-[#3faec1] duration-300'>
 							Horse Show
 							<span className='group-hover: duration-300'></span>

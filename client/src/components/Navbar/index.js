@@ -19,7 +19,7 @@ const Home = () => {
           <Link to='/horses' className="text-white">Horses</Link>
         </li>
         <li className="hover:text-[#3faec1] hover:scale-105">
-          <Link to="/home" smooth={true} duration={500} className="text-white">
+          <Link to="/home" smooth={'true'} duration={500} className="text-white">
             Home
           </Link>
         </li>

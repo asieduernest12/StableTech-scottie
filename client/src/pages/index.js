@@ -11,12 +11,12 @@ const Home = () => {
 
       <ul className="hidden md:flex">
         <li className="hover:text-[#3faec1] hover:scale-105">
-          <Link to="hero" smooth={true} duration={500}>
+          <Link to="hero" smooth={'true'} duration={500}>
             Home
           </Link>
         </li>
         <li className="hover:text-[#3faec1] hover:scale-105">
-          <Link to="about" smooth={true} duration={500}>
+          <Link to="about" smooth={'true'} duration={500}>
             Sign In
           </Link>
         </li>
