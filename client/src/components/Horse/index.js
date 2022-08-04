@@ -1,18 +1,32 @@
+import { useMutation, useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import horseImage from "../../assets/images/Horse.jpg";
-import { useQuery } from "@apollo/client";
+import { DELETE_HORSE } from "../../utils/mutations";
 import { QUERY_ALL_HORSES } from "../../utils/queries";
-import { Link } from "react-router-dom";
 
 const Horses = () => {
   const [horses, setHorses] = useState([]);
+  const navigate = useNavigate();
 
   const { loading, data } = useQuery(QUERY_ALL_HORSES);
+  const [deleteHorseFunction] = useMutation(DELETE_HORSE, {
+    refetchQueries: [
+      { query: QUERY_ALL_HORSES }, // DocumentNode object parsed with gql
+      // 'QUERY_ALL_HORSES' // Query name
+    ],
+  });
 
   useEffect(() => {
     setHorses(data?.allHorses ?? horses);
     console.log(horses);
   }, [data]);
+
+  const Deletehorse = (horse_id) => {
+    deleteHorseFunction({ variables: { id: horse_id } }).then(() =>
+      navigate("/horses")
+    );
+  };
 
   return (
     <div
@@ -47,12 +61,12 @@ const Horses = () => {
                 >
                   Edit
                 </a>
-                <a
-                  href="/deletehorse"
+                <button
+                  onClick={() => Deletehorse(horse._id)}
                   className="bg-blue-500 rounded-lg text-white text-decoration-none text-center border border-slate-300 p-2 hover:bg-slate-700 transition-all duration-500"
                 >
                   Delete
-                </a>
+                </button>
               </div>
             </>
           ))}

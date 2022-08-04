@@ -14,6 +14,12 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex">
+
+        <li className="hover:text-[#3faec1] hover:scale-105">
+          <Link to="horse" smooth={true} duration={500}>
+            Horses
+          </Link>
+        </li>
         <li className="hover:text-[#3faec1] hover:scale-105">
           <Link to="hero" smooth={true} duration={500}>
             Home

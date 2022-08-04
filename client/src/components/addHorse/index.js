@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_HORSE } from "../../utils/mutations";
 import { useNavigate } from "react-router-dom";
+import { QUERY_ALL_HORSES } from "../../utils/queries";
 
 const Addhorse = () => {
   let horseName, ownerName, ownerPhone, feed, vaccineDate, shoeDate, barnName;
 
   const navigate = useNavigate();
-  const [addHorse] = useMutation(ADD_HORSE);
+  const [addHorse] = useMutation(ADD_HORSE,{
+    refetchQueries: [
+      {query: QUERY_ALL_HORSES}, // DocumentNode object parsed with gql
+  
+    ],
+  });
 
   console.log(addHorse);
 
@@ -43,7 +49,7 @@ const Addhorse = () => {
     <>
       <form onSubmit={handleFormSubmit}></form>
       <div
-        class="w-screen h-screen flex justify-center items-center
+        className="w-screen h-screen flex justify-center items-center
     bg-gradient-to-br from-blue-700 to-white-700"
       >
         <form
