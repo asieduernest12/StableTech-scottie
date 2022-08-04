@@ -93,3 +93,15 @@ mutation DeleteSchedule(
   }
   }
   `;
+
+export const DELETE_HORSE = gql`
+mutation DeleteHorse(
+  $id: ID!
+  ) {
+  deleteHorse(
+    _id: $id
+    ) {
+    _id
+  }
+}
+`;
