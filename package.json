@@ -1,38 +1,41 @@
 {
-  "name": "stabletech",
-  "version": "1.0.0",
-  "description": "Functionality includes:\r Personal profiles for each horse with their\r -specific feed regimen\r -when they got shoes \r -when they got shots \r -owner name and phone number",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "watch": "nodemon"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ScottieTee/StableTech.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ScottieTee/StableTech/issues"
-  },
-  "homepage": "https://github.com/ScottieTee/StableTech#readme",
-  "dependencies": {
-    "apollo-server-express": "^3.9.0",
-    "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "graphql": "^16.5.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongo": "^0.1.0",
-    "mongoose": "^6.4.1",
-    "react-router-dom": "^6.3.0",
-    "react-scroll": "^1.8.7",
-    "styled-components": "^5.3.5"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.18"
-  }
+	"name": "stabletech",
+	"version": "1.0.0",
+	"description": "Functionality includes:\r Personal profiles for each horse with their\r -specific feed regimen\r -when they got shoes \r -when they got shots \r -owner name and phone number",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js",
+		"heroku-postbuild": "cd client && npm install && npm run build",
+		"watch": "nodemon",
+    "setup": "rm -rf node_modules client/node_modules && npm run setup:install",
+    "setup:install": "npx concurrently -k \"npm i\" \"cd client && npm i\"",
+		"dev:run": "npx concurrently -k  \"npm start\" \"cd client && npm start\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ScottieTee/StableTech.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ScottieTee/StableTech/issues"
+	},
+	"homepage": "https://github.com/ScottieTee/StableTech#readme",
+	"dependencies": {
+		"apollo-server-express": "^3.9.0",
+		"bcrypt": "^5.0.1",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"graphql": "^16.5.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongo": "^0.1.0",
+		"mongoose": "^6.4.1",
+		"react-router-dom": "^6.3.0",
+		"react-scroll": "^1.8.7",
+		"styled-components": "^5.3.5"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.18"
+	}
 }
